@@ -1,20 +1,19 @@
-n_lines = int(input())
+status = input()
 
-winning_team = None
-goals_ahead = 0
+char = 0
+init_team = status[0]
 
-for i in range(n_lines):
-    team = input()
-    if winning_team == team:
-        # print(f"Winning team is now {team}")
-        goals_ahead += 1
-    elif goals_ahead == 0:
-        # print(f"Winning team is now {team}")
-        winning_team = team
-        goals_ahead += 1
+for player in status:
+    if player == init_team:
+        char += 1
     else:
-        # print(f"Scores tied")
-        goals_ahead -= 1
+        char = 1
+        init_team = player
+    if char == 7:
+        break
 
-
-print(winning_team)
+if char == 7:
+    print("YES")
+else:
+    print("NO")
+    
