@@ -4,16 +4,17 @@ for _ in range(t):
     n = int(input())
     a = [int(x) for x in input().split()]
 
-    match_ele = a[0]
-    change = None
-    ctr = 0
+    p1 , n1 = 0 , 0
+    p2 , n2 = 0 , 0
     for i in range(n):
-        if a[i]!=match_ele:
-            ctr += 1
-            change = i
-            match_ele = a[i]
-    
-    if ctr == 1:
-        print(change+1)
+        if a[0] == a[i]:
+            n1 += 1
+            p1 = i
+        else:
+            n2 += i
+            p2 = i
+
+    if n1 == 1:
+        print(p1+1)
     else:
-        print(change)
+        print(p2+1)
